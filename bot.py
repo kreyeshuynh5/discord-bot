@@ -13,7 +13,7 @@ async def on_message(msg):
     if msg.author == bot.user or bot.user not in msg.mentions:
         return
     reply = ai.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-20b",
         messages=[{"role": "system", "content": PERSONA},
                   {"role": "user", "content": msg.content}],
     ).choices[0].message.content
